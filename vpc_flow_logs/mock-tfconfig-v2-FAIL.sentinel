@@ -1,0 +1,730 @@
+import "strings"
+
+providers = {
+	"aws": {
+		"alias": "",
+		"config": {
+			"default_tags": [
+				{
+					"tags": {
+						"constant_value": {
+							"environment": "development",
+							"platform":    "terraform",
+							"repo-name":   "scaling-succotash",
+							"user":        "MatthewDavis",
+						},
+					},
+				},
+			],
+			"region": {
+				"constant_value": "us-east-1",
+			},
+		},
+		"full_name":           "registry.terraform.io/hashicorp/aws",
+		"module_address":      "",
+		"name":                "aws",
+		"provider_config_key": "aws",
+		"version_constraint":  "~> 4.0",
+	},
+}
+
+resources = {
+	"aws_cloudwatch_log_group.example": {
+		"address": "aws_cloudwatch_log_group.example",
+		"config": {
+			"name": {
+				"constant_value": "vpc_logs",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_cloudwatch_log_group",
+	},
+	"aws_default_route_table.accepting-route-table": {
+		"address": "aws_default_route_table.accepting-route-table",
+		"config": {
+			"default_route_table_id": {
+				"references": [
+					"aws_vpc.accepting_vpc.main_route_table_id",
+					"aws_vpc.accepting_vpc",
+				],
+			},
+			"route": {
+				"references": [
+					"aws_internet_gateway.accepting-igw.id",
+					"aws_internet_gateway.accepting-igw",
+					"aws_vpc_peering_connection.foo.id",
+					"aws_vpc_peering_connection.foo",
+				],
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "accepting-vpc-route-table",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "accepting-route-table",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_default_route_table",
+	},
+	"aws_default_route_table.requesting-route-table": {
+		"address": "aws_default_route_table.requesting-route-table",
+		"config": {
+			"default_route_table_id": {
+				"references": [
+					"aws_vpc.requesting_vpc.main_route_table_id",
+					"aws_vpc.requesting_vpc",
+				],
+			},
+			"route": {
+				"references": [
+					"aws_internet_gateway.requesting-igw.id",
+					"aws_internet_gateway.requesting-igw",
+					"aws_vpc_peering_connection.foo.id",
+					"aws_vpc_peering_connection.foo",
+				],
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "requesting-vpc-route-table",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "requesting-route-table",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_default_route_table",
+	},
+	"aws_flow_log.flow_logs_example": {
+		"address": "aws_flow_log.flow_logs_example",
+		"config": {
+			"iam_role_arn": {
+				"references": [
+					"aws_iam_role.example.arn",
+					"aws_iam_role.example",
+				],
+			},
+			"log_destination": {
+				"references": [
+					"aws_cloudwatch_log_group.example.arn",
+					"aws_cloudwatch_log_group.example",
+				],
+			},
+			"traffic_type": {
+				"constant_value": "ALL",
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.requesting_vpc.id",
+					"aws_vpc.requesting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "flow_logs_example",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_flow_log",
+	},
+	"aws_iam_role.example": {
+		"address": "aws_iam_role.example",
+		"config": {
+			"assume_role_policy": {
+				"constant_value": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"\",\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"vpc-flow-logs.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+			},
+			"name": {
+				"constant_value": "example",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role",
+	},
+	"aws_iam_role_policy.example": {
+		"address": "aws_iam_role_policy.example",
+		"config": {
+			"name": {
+				"constant_value": "example",
+			},
+			"policy": {
+				"constant_value": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Action\": [\n        \"logs:CreateLogGroup\",\n        \"logs:CreateLogStream\",\n        \"logs:PutLogEvents\",\n        \"logs:DescribeLogGroups\",\n        \"logs:DescribeLogStreams\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": \"*\"\n    }\n  ]\n}\n",
+			},
+			"role": {
+				"references": [
+					"aws_iam_role.example.id",
+					"aws_iam_role.example",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role_policy",
+	},
+	"aws_instance.accepting_ec2": {
+		"address": "aws_instance.accepting_ec2",
+		"config": {
+			"ami": {
+				"references": [
+					"data.aws_ami.ubuntu.id",
+					"data.aws_ami.ubuntu",
+				],
+			},
+			"instance_type": {
+				"constant_value": "t2.micro",
+			},
+			"key_name": {
+				"references": [
+					"data.aws_key_pair.mdaviskey.key_name",
+					"data.aws_key_pair.mdaviskey",
+				],
+			},
+			"security_groups": {
+				"references": [
+					"aws_security_group.allow_ssh_accepting.id",
+					"aws_security_group.allow_ssh_accepting",
+				],
+			},
+			"subnet_id": {
+				"references": [
+					"aws_subnet.accepting_subnet.id",
+					"aws_subnet.accepting_subnet",
+				],
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "AcceptingEC2",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "accepting_ec2",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_instance",
+	},
+	"aws_instance.requesting_ec2": {
+		"address": "aws_instance.requesting_ec2",
+		"config": {
+			"ami": {
+				"references": [
+					"data.aws_ami.ubuntu.id",
+					"data.aws_ami.ubuntu",
+				],
+			},
+			"instance_type": {
+				"constant_value": "t2.micro",
+			},
+			"key_name": {
+				"references": [
+					"data.aws_key_pair.mdaviskey.key_name",
+					"data.aws_key_pair.mdaviskey",
+				],
+			},
+			"security_groups": {
+				"references": [
+					"aws_security_group.allow_ssh_requesting.id",
+					"aws_security_group.allow_ssh_requesting",
+				],
+			},
+			"subnet_id": {
+				"references": [
+					"aws_subnet.requesting_subnet.id",
+					"aws_subnet.requesting_subnet",
+				],
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "RequestingEC2",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "requesting_ec2",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_instance",
+	},
+	"aws_internet_gateway.accepting-igw": {
+		"address": "aws_internet_gateway.accepting-igw",
+		"config": {
+			"tags": {
+				"constant_value": {
+					"Name": "accepting-igw",
+				},
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.accepting_vpc.id",
+					"aws_vpc.accepting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "accepting-igw",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_internet_gateway",
+	},
+	"aws_internet_gateway.requesting-igw": {
+		"address": "aws_internet_gateway.requesting-igw",
+		"config": {
+			"tags": {
+				"constant_value": {
+					"Name": "requesting-igw",
+				},
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.requesting_vpc.id",
+					"aws_vpc.requesting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "requesting-igw",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_internet_gateway",
+	},
+	"aws_security_group.allow_ssh_accepting": {
+		"address": "aws_security_group.allow_ssh_accepting",
+		"config": {
+			"egress": {
+				"constant_value": [
+					{
+						"cidr_blocks": [
+							"0.0.0.0/0",
+						],
+						"description":      null,
+						"from_port":        0,
+						"ipv6_cidr_blocks": null,
+						"prefix_list_ids":  null,
+						"protocol":         "-1",
+						"security_groups":  null,
+						"self":             null,
+						"to_port":          0,
+					},
+				],
+			},
+			"ingress": {
+				"constant_value": [
+					{
+						"cidr_blocks": [
+							"54.161.110.139/32",
+							"10.100.0.0/16",
+						],
+						"description":      null,
+						"from_port":        22,
+						"ipv6_cidr_blocks": null,
+						"prefix_list_ids":  null,
+						"protocol":         "tcp",
+						"security_groups":  null,
+						"self":             null,
+						"to_port":          22,
+					},
+				],
+			},
+			"name": {
+				"constant_value": "allow ssh from accepting",
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.accepting_vpc.id",
+					"aws_vpc.accepting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "allow_ssh_accepting",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_security_group",
+	},
+	"aws_security_group.allow_ssh_requesting": {
+		"address": "aws_security_group.allow_ssh_requesting",
+		"config": {
+			"egress": {
+				"constant_value": [
+					{
+						"cidr_blocks": [
+							"0.0.0.0/0",
+						],
+						"description":      null,
+						"from_port":        0,
+						"ipv6_cidr_blocks": null,
+						"prefix_list_ids":  null,
+						"protocol":         "-1",
+						"security_groups":  null,
+						"self":             null,
+						"to_port":          0,
+					},
+				],
+			},
+			"ingress": {
+				"constant_value": [
+					{
+						"cidr_blocks": [
+							"54.161.110.139/32",
+							"10.200.0.0/16",
+						],
+						"description":      null,
+						"from_port":        22,
+						"ipv6_cidr_blocks": null,
+						"prefix_list_ids":  null,
+						"protocol":         "tcp",
+						"security_groups":  null,
+						"self":             null,
+						"to_port":          22,
+					},
+				],
+			},
+			"name": {
+				"constant_value": "allow ssh from requesting",
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.requesting_vpc.id",
+					"aws_vpc.requesting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "allow_ssh_requesting",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_security_group",
+	},
+	"aws_subnet.accepting_subnet": {
+		"address": "aws_subnet.accepting_subnet",
+		"config": {
+			"cidr_block": {
+				"constant_value": "10.200.1.0/24",
+			},
+			"map_public_ip_on_launch": {
+				"constant_value": true,
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "accepting-subnet",
+				},
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.accepting_vpc.id",
+					"aws_vpc.accepting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "accepting_subnet",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_subnet",
+	},
+	"aws_subnet.requesting_subnet": {
+		"address": "aws_subnet.requesting_subnet",
+		"config": {
+			"cidr_block": {
+				"constant_value": "10.100.1.0/24",
+			},
+			"map_public_ip_on_launch": {
+				"constant_value": true,
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "requesting-subnet",
+				},
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.requesting_vpc.id",
+					"aws_vpc.requesting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "requesting_subnet",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_subnet",
+	},
+	"aws_vpc.accepting_vpc": {
+		"address": "aws_vpc.accepting_vpc",
+		"config": {
+			"cidr_block": {
+				"constant_value": "10.200.0.0/16",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "accepting-vpc",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "accepting_vpc",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"aws_vpc.requesting_vpc": {
+		"address": "aws_vpc.requesting_vpc",
+		"config": {
+			"cidr_block": {
+				"constant_value": "10.100.0.0/16",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "requesting-vpc",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "requesting_vpc",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"aws_vpc_peering_connection.foo": {
+		"address": "aws_vpc_peering_connection.foo",
+		"config": {
+			"auto_accept": {
+				"constant_value": true,
+			},
+			"peer_vpc_id": {
+				"references": [
+					"aws_vpc.accepting_vpc.id",
+					"aws_vpc.accepting_vpc",
+				],
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.requesting_vpc.id",
+					"aws_vpc.requesting_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "foo",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc_peering_connection",
+	},
+	"data.aws_ami.ubuntu": {
+		"address": "data.aws_ami.ubuntu",
+		"config": {
+			"filter": [
+				{
+					"name": {
+						"constant_value": "name",
+					},
+					"values": {
+						"constant_value": [
+							"ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*",
+						],
+					},
+				},
+				{
+					"name": {
+						"constant_value": "virtualization-type",
+					},
+					"values": {
+						"constant_value": [
+							"hvm",
+						],
+					},
+				},
+			],
+			"most_recent": {
+				"constant_value": true,
+			},
+			"owners": {
+				"constant_value": [
+					"099720109477",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "ubuntu",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_ami",
+	},
+	"data.aws_availability_zones.zones": {
+		"address":             "data.aws_availability_zones.zones",
+		"config":              {},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "zones",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_availability_zones",
+	},
+	"data.aws_key_pair.mdaviskey": {
+		"address": "data.aws_key_pair.mdaviskey",
+		"config": {
+			"include_public_key": {
+				"constant_value": true,
+			},
+			"key_name": {
+				"constant_value": "m-davis-key",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "mdaviskey",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_key_pair",
+	},
+	"data.aws_vpcs.all_vpcs": {
+		"address":             "data.aws_vpcs.all_vpcs",
+		"config":              {},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "all_vpcs",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpcs",
+	},
+}
+
+provisioners = {}
+
+variables = {
+	"region": {
+		"default":        "us-east-1",
+		"description":    "",
+		"module_address": "",
+		"name":           "region",
+	},
+}
+
+outputs = {
+	"m-davis-keyname": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "m-davis-keyname",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"data.aws_key_pair.mdaviskey.key_name",
+				"data.aws_key_pair.mdaviskey",
+			],
+		},
+	},
+	"m-davis-public_key-key": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "m-davis-public_key-key",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"data.aws_key_pair.mdaviskey.public_key",
+				"data.aws_key_pair.mdaviskey",
+			],
+		},
+	},
+}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}
