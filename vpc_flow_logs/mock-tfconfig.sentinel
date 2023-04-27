@@ -1,0 +1,366 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {
+			"aws_vpc": {
+				"vpc0": {
+					"config":       {},
+					"provisioners": null,
+					"references": {
+						"id": [
+							"aws_vpc.main.id",
+							"aws_vpc.main",
+						],
+					},
+				},
+				"vpc1": {
+					"config":       {},
+					"provisioners": null,
+					"references": {
+						"id": [
+							"aws_vpc.main1.id",
+							"aws_vpc.main1",
+						],
+					},
+				},
+				"vpc2": {
+					"config":       {},
+					"provisioners": null,
+					"references": {
+						"id": [
+							"aws_vpc.main2.id",
+							"aws_vpc.main2",
+						],
+					},
+				},
+				"vpc3": {
+					"config":       {},
+					"provisioners": null,
+					"references": {
+						"id": [
+							"aws_vpc.main3.id",
+							"aws_vpc.main3",
+						],
+					},
+				},
+				"vpc4": {
+					"config":       {},
+					"provisioners": null,
+					"references": {
+						"id": [
+							"aws_vpc.main4.id",
+							"aws_vpc.main4",
+						],
+					},
+				},
+				"vpc5": {
+					"config":       {},
+					"provisioners": null,
+					"references": {
+						"id": [
+							"aws_vpc.main5.id",
+							"aws_vpc.main5",
+						],
+					},
+				},
+			},
+			"aws_vpcs": {
+				"all_vpcs": {
+					"config": {
+						"tags": {
+							"repo-name": "sentinel-terraform-repo",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"tags": [],
+					},
+				},
+			},
+		},
+		"modules": {},
+		"outputs": {
+			"sentinel_vpc_ids": {
+				"depends_on":  [],
+				"description": "",
+				"references": [
+					"data.aws_vpcs.all_vpcs",
+				],
+				"sensitive": false,
+				"value":     undefined,
+			},
+		},
+		"providers": {
+			"aws": {
+				"alias": {
+					"": {
+						"config": {
+							"default_tags": [
+								{
+									"tags": {
+										"environment": "development",
+										"platform":    "terraform",
+										"repo-name":   "sentinel-terraform-repo",
+										"user":        "MatthewDavis",
+									},
+								},
+							],
+							"region": "us-east-1",
+						},
+						"references": {
+							"default_tags": [
+								{
+									"tags": [],
+								},
+							],
+							"region": [],
+						},
+						"version": "~> 4.0",
+					},
+				},
+				"config": {
+					"default_tags": [
+						{
+							"tags": {
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+					],
+					"region": "us-east-1",
+				},
+				"references": {
+					"default_tags": [
+						{
+							"tags": [],
+						},
+					],
+					"region": [],
+				},
+				"version": "~> 4.0",
+			},
+		},
+		"resources": {
+			"aws_cloudwatch_log_group": {
+				"example": {
+					"config": {
+						"name": "vpc_logs",
+					},
+					"provisioners": null,
+					"references": {
+						"name": [],
+					},
+				},
+			},
+			"aws_flow_log": {
+				"flow_logs_example1": {
+					"config": {
+						"traffic_type": "ALL",
+					},
+					"provisioners": null,
+					"references": {
+						"iam_role_arn": [
+							"aws_iam_role.example.arn",
+							"aws_iam_role.example",
+						],
+						"log_destination": [
+							"aws_cloudwatch_log_group.example.arn",
+							"aws_cloudwatch_log_group.example",
+						],
+						"traffic_type": [],
+						"vpc_id": [
+							"aws_vpc.main1.id",
+							"aws_vpc.main1",
+						],
+					},
+				},
+				"flow_logs_example3": {
+					"config": {
+						"traffic_type": "ALL",
+					},
+					"provisioners": null,
+					"references": {
+						"iam_role_arn": [
+							"aws_iam_role.example.arn",
+							"aws_iam_role.example",
+						],
+						"log_destination": [
+							"aws_cloudwatch_log_group.example.arn",
+							"aws_cloudwatch_log_group.example",
+						],
+						"traffic_type": [],
+						"vpc_id": [
+							"aws_vpc.main3.id",
+							"aws_vpc.main3",
+						],
+					},
+				},
+				"flow_logs_example5": {
+					"config": {
+						"traffic_type": "ALL",
+					},
+					"provisioners": null,
+					"references": {
+						"iam_role_arn": [
+							"aws_iam_role.example.arn",
+							"aws_iam_role.example",
+						],
+						"log_destination": [
+							"aws_cloudwatch_log_group.example.arn",
+							"aws_cloudwatch_log_group.example",
+						],
+						"traffic_type": [],
+						"vpc_id": [
+							"aws_vpc.main5.id",
+							"aws_vpc.main5",
+						],
+					},
+				},
+			},
+			"aws_iam_role": {
+				"example": {
+					"config": {
+						"assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"\",\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"vpc-flow-logs.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+						"name":               "example",
+					},
+					"provisioners": null,
+					"references": {
+						"assume_role_policy": [],
+						"name":               [],
+					},
+				},
+			},
+			"aws_iam_role_policy": {
+				"example": {
+					"config": {
+						"name":   "example",
+						"policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Action\": [\n        \"logs:CreateLogGroup\",\n        \"logs:CreateLogStream\",\n        \"logs:PutLogEvents\",\n        \"logs:DescribeLogGroups\",\n        \"logs:DescribeLogStreams\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": \"*\"\n    }\n  ]\n}\n",
+					},
+					"provisioners": null,
+					"references": {
+						"name":   [],
+						"policy": [],
+						"role": [
+							"aws_iam_role.example.id",
+							"aws_iam_role.example",
+						],
+					},
+				},
+			},
+			"aws_vpc": {
+				"main": {
+					"config": {
+						"cidr_block": "10.0.0.0/24",
+						"tags": {
+							"Name": "VPC00",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"cidr_block": [],
+						"tags":       [],
+					},
+				},
+				"main1": {
+					"config": {
+						"cidr_block": "11.0.0.0/24",
+						"tags": {
+							"Name": "VPC01",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"cidr_block": [],
+						"tags":       [],
+					},
+				},
+				"main2": {
+					"config": {
+						"cidr_block": "12.0.0.0/24",
+						"tags": {
+							"Name": "VPC02",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"cidr_block": [],
+						"tags":       [],
+					},
+				},
+				"main3": {
+					"config": {
+						"cidr_block": "13.0.0.0/24",
+						"tags": {
+							"Name": "VPC03",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"cidr_block": [],
+						"tags":       [],
+					},
+				},
+				"main4": {
+					"config": {
+						"cidr_block": "14.0.0.0/24",
+						"tags": {
+							"Name": "VPC04",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"cidr_block": [],
+						"tags":       [],
+					},
+				},
+				"main5": {
+					"config": {
+						"cidr_block": "15.0.0.0/24",
+						"tags": {
+							"Name": "VPC05",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"cidr_block": [],
+						"tags":       [],
+					},
+				},
+			},
+		},
+		"variables": {},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+modules = _modules.root.modules
+providers = _modules.root.providers
+resources = _modules.root.resources
+variables = _modules.root.variables
+outputs = _modules.root.outputs

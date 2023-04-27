@@ -1,0 +1,41 @@
+id = "run-SvhowV2Zw6X8tBaf"
+created_at = "2023-04-27T17:09:09.580Z"
+message = "Triggered via UI"
+commit_sha = "7634a833fe3b4dc5a44f3fd496e2186218c04690"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+
+variables = {
+	"AWS_ACCESS_KEY_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"AWS_SECRET_KEY": {
+		"category":  "env",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "sentinel_tests",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2023-03-24T17:28:17.799Z",
+	"description": null,
+	"id":          "ws-w7KHnJ2rYwPiWxbK",
+	"name":        "sentinel-terraform-repo",
+	"tags":        [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "james-cole2015/sentinel-terraform-repo",
+		"identifier":         "james-cole2015/sentinel-terraform-repo",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}

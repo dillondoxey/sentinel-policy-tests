@@ -1,0 +1,2425 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {
+			"aws_vpc": {
+				"vpc0": {
+					0: {
+						"applied": {
+							"filter":   [],
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block_associations.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"filter.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"vpc1": {
+					0: {
+						"applied": {
+							"filter":   [],
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block_associations.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"filter.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"vpc2": {
+					0: {
+						"applied": {
+							"filter":   [],
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block_associations.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"filter.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"vpc3": {
+					0: {
+						"applied": {
+							"filter":   [],
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block_associations.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"filter.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"vpc4": {
+					0: {
+						"applied": {
+							"filter":   [],
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block_associations.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"filter.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"vpc5": {
+					0: {
+						"applied": {
+							"filter":   [],
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block_associations.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"filter.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+		"path": [],
+		"resources": {
+			"aws_cloudwatch_log_group": {
+				"example": {
+					0: {
+						"applied": {
+							"kms_key_id":        null,
+							"name":              "vpc_logs",
+							"retention_in_days": 0,
+							"skip_destroy":      false,
+							"tags":              null,
+							"tags_all": {
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"kms_key_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "vpc_logs",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"retention_in_days": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"skip_destroy": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "4",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_flow_log": {
+				"flow_logs_example1": {
+					0: {
+						"applied": {
+							"deliver_cross_account_role": null,
+							"destination_options":        [],
+							"eni_id":                     null,
+							"log_destination_type":       "cloud-watch-logs",
+							"max_aggregation_interval":   600,
+							"subnet_id":                  null,
+							"tags":                       null,
+							"tags_all": {
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+							"traffic_type":                  "ALL",
+							"transit_gateway_attachment_id": null,
+							"transit_gateway_id":            null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"deliver_cross_account_role": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"destination_options.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"eni_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"iam_role_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_destination": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_destination_type": {
+								"computed": false,
+								"new":      "cloud-watch-logs",
+								"old":      "",
+							},
+							"log_format": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_group_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_aggregation_interval": {
+								"computed": false,
+								"new":      "600",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "4",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+							"traffic_type": {
+								"computed": false,
+								"new":      "ALL",
+								"old":      "",
+							},
+							"transit_gateway_attachment_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"transit_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"flow_logs_example3": {
+					0: {
+						"applied": {
+							"deliver_cross_account_role": null,
+							"destination_options":        [],
+							"eni_id":                     null,
+							"log_destination_type":       "cloud-watch-logs",
+							"max_aggregation_interval":   600,
+							"subnet_id":                  null,
+							"tags":                       null,
+							"tags_all": {
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+							"traffic_type":                  "ALL",
+							"transit_gateway_attachment_id": null,
+							"transit_gateway_id":            null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"deliver_cross_account_role": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"destination_options.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"eni_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"iam_role_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_destination": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_destination_type": {
+								"computed": false,
+								"new":      "cloud-watch-logs",
+								"old":      "",
+							},
+							"log_format": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_group_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_aggregation_interval": {
+								"computed": false,
+								"new":      "600",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "4",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+							"traffic_type": {
+								"computed": false,
+								"new":      "ALL",
+								"old":      "",
+							},
+							"transit_gateway_attachment_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"transit_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"flow_logs_example5": {
+					0: {
+						"applied": {
+							"deliver_cross_account_role": null,
+							"destination_options":        [],
+							"eni_id":                     null,
+							"log_destination_type":       "cloud-watch-logs",
+							"max_aggregation_interval":   600,
+							"subnet_id":                  null,
+							"tags":                       null,
+							"tags_all": {
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+							"traffic_type":                  "ALL",
+							"transit_gateway_attachment_id": null,
+							"transit_gateway_id":            null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"deliver_cross_account_role": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"destination_options.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"eni_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"iam_role_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_destination": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_destination_type": {
+								"computed": false,
+								"new":      "cloud-watch-logs",
+								"old":      "",
+							},
+							"log_format": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"log_group_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_aggregation_interval": {
+								"computed": false,
+								"new":      "600",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "4",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+							"traffic_type": {
+								"computed": false,
+								"new":      "ALL",
+								"old":      "",
+							},
+							"transit_gateway_attachment_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"transit_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_role": {
+				"example": {
+					0: {
+						"applied": {
+							"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"vpc-flow-logs.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+							"description":           null,
+							"force_detach_policies": false,
+							"max_session_duration":  3600,
+							"name":                  "example",
+							"path":                  "/",
+							"permissions_boundary":  null,
+							"tags":                  null,
+							"tags_all": {
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assume_role_policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"vpc-flow-logs.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"create_date": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"force_detach_policies": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"inline_policy.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"managed_policy_arns.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_session_duration": {
+								"computed": false,
+								"new":      "3600",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "example",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"permissions_boundary": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"role_last_used.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "4",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+							"unique_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_role_policy": {
+				"example": {
+					0: {
+						"applied": {
+							"name":        "example",
+							"name_prefix": null,
+							"policy":      "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"logs:CreateLogGroup\",\"logs:CreateLogStream\",\"logs:PutLogEvents\",\"logs:DescribeLogGroups\",\"logs:DescribeLogStreams\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}]}",
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "example",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"policy": {
+								"computed": false,
+								"new":      "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"logs:CreateLogGroup\",\"logs:CreateLogStream\",\"logs:PutLogEvents\",\"logs:DescribeLogGroups\",\"logs:DescribeLogStreams\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}]}",
+								"old":      "",
+							},
+							"role": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_vpc": {
+				"main": {
+					0: {
+						"applied": {
+							"assign_generated_ipv6_cidr_block": null,
+							"cidr_block":                       "10.0.0.0/24",
+							"enable_dns_support":               true,
+							"instance_tenancy":                 "default",
+							"ipv4_ipam_pool_id":                null,
+							"ipv4_netmask_length":              null,
+							"ipv6_ipam_pool_id":                null,
+							"ipv6_netmask_length":              null,
+							"tags": {
+								"Name": "VPC00",
+							},
+							"tags_all": {
+								"Name":        "VPC00",
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_generated_ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "10.0.0.0/24",
+								"old":      "",
+							},
+							"default_network_acl_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"ipv4_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv4_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "VPC00",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "VPC00",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"main1": {
+					0: {
+						"applied": {
+							"assign_generated_ipv6_cidr_block": null,
+							"cidr_block":                       "11.0.0.0/24",
+							"enable_dns_support":               true,
+							"instance_tenancy":                 "default",
+							"ipv4_ipam_pool_id":                null,
+							"ipv4_netmask_length":              null,
+							"ipv6_ipam_pool_id":                null,
+							"ipv6_netmask_length":              null,
+							"tags": {
+								"Name": "VPC01",
+							},
+							"tags_all": {
+								"Name":        "VPC01",
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_generated_ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "11.0.0.0/24",
+								"old":      "",
+							},
+							"default_network_acl_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"ipv4_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv4_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "VPC01",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "VPC01",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"main2": {
+					0: {
+						"applied": {
+							"assign_generated_ipv6_cidr_block": null,
+							"cidr_block":                       "12.0.0.0/24",
+							"enable_dns_support":               true,
+							"instance_tenancy":                 "default",
+							"ipv4_ipam_pool_id":                null,
+							"ipv4_netmask_length":              null,
+							"ipv6_ipam_pool_id":                null,
+							"ipv6_netmask_length":              null,
+							"tags": {
+								"Name": "VPC02",
+							},
+							"tags_all": {
+								"Name":        "VPC02",
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_generated_ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "12.0.0.0/24",
+								"old":      "",
+							},
+							"default_network_acl_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"ipv4_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv4_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "VPC02",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "VPC02",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"main3": {
+					0: {
+						"applied": {
+							"assign_generated_ipv6_cidr_block": null,
+							"cidr_block":                       "13.0.0.0/24",
+							"enable_dns_support":               true,
+							"instance_tenancy":                 "default",
+							"ipv4_ipam_pool_id":                null,
+							"ipv4_netmask_length":              null,
+							"ipv6_ipam_pool_id":                null,
+							"ipv6_netmask_length":              null,
+							"tags": {
+								"Name": "VPC03",
+							},
+							"tags_all": {
+								"Name":        "VPC03",
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_generated_ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "13.0.0.0/24",
+								"old":      "",
+							},
+							"default_network_acl_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"ipv4_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv4_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "VPC03",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "VPC03",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"main4": {
+					0: {
+						"applied": {
+							"assign_generated_ipv6_cidr_block": null,
+							"cidr_block":                       "14.0.0.0/24",
+							"enable_dns_support":               true,
+							"instance_tenancy":                 "default",
+							"ipv4_ipam_pool_id":                null,
+							"ipv4_netmask_length":              null,
+							"ipv6_ipam_pool_id":                null,
+							"ipv6_netmask_length":              null,
+							"tags": {
+								"Name": "VPC04",
+							},
+							"tags_all": {
+								"Name":        "VPC04",
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_generated_ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "14.0.0.0/24",
+								"old":      "",
+							},
+							"default_network_acl_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"ipv4_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv4_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "VPC04",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "VPC04",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"main5": {
+					0: {
+						"applied": {
+							"assign_generated_ipv6_cidr_block": null,
+							"cidr_block":                       "15.0.0.0/24",
+							"enable_dns_support":               true,
+							"instance_tenancy":                 "default",
+							"ipv4_ipam_pool_id":                null,
+							"ipv4_netmask_length":              null,
+							"ipv6_ipam_pool_id":                null,
+							"ipv6_netmask_length":              null,
+							"tags": {
+								"Name": "VPC05",
+							},
+							"tags_all": {
+								"Name":        "VPC05",
+								"environment": "development",
+								"platform":    "terraform",
+								"repo-name":   "sentinel-terraform-repo",
+								"user":        "MatthewDavis",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_generated_ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "15.0.0.0/24",
+								"old":      "",
+							},
+							"default_network_acl_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_classiclink_dns_support": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"ipv4_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv4_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "VPC05",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "VPC05",
+								"old":      "",
+							},
+							"tags_all.environment": {
+								"computed": false,
+								"new":      "development",
+								"old":      "",
+							},
+							"tags_all.platform": {
+								"computed": false,
+								"new":      "terraform",
+								"old":      "",
+							},
+							"tags_all.repo-name": {
+								"computed": false,
+								"new":      "sentinel-terraform-repo",
+								"old":      "",
+							},
+							"tags_all.user": {
+								"computed": false,
+								"new":      "MatthewDavis",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.4.2"
+
+variables = {}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources

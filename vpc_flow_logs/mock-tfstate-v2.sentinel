@@ -1,0 +1,41 @@
+terraform_version = "1.4.2"
+
+outputs = {
+	"sentinel_vpc_ids": {
+		"name":      "sentinel_vpc_ids",
+		"sensitive": false,
+		"value": {
+			"filter": null,
+			"id":     "us-east-1",
+			"ids":    [],
+			"tags": {
+				"repo-name": "sentinel-terraform-repo",
+			},
+			"timeouts": null,
+		},
+	},
+}
+
+resources = {
+	"aws_vpcs.all_vpcs": {
+		"address":        "aws_vpcs.all_vpcs",
+		"depends_on":     [],
+		"deposed_key":    "",
+		"index":          null,
+		"mode":           "data",
+		"module_address": "",
+		"name":           "all_vpcs",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"tainted":        false,
+		"type":           "aws_vpcs",
+		"values": {
+			"filter": null,
+			"id":     "us-east-1",
+			"ids":    [],
+			"tags": {
+				"repo-name": "sentinel-terraform-repo",
+			},
+			"timeouts": null,
+		},
+	},
+}

@@ -1,0 +1,73 @@
+import "strings"
+import "types"
+
+outputs = {
+	"sentinel_vpc_ids": {
+		"sensitive": false,
+		"type":      "map",
+		"value": {
+			"filter": null,
+			"id":     "us-east-1",
+			"ids":    [],
+			"tags": {
+				"repo-name": "sentinel-terraform-repo",
+			},
+			"timeouts": null,
+		},
+	},
+}
+
+_modules = {
+	"root": {
+		"data": {
+			"aws_vpcs": {
+				"all_vpcs": {
+					0: {
+						"attr": {
+							"filter": null,
+							"id":     "us-east-1",
+							"ids":    [],
+							"tags": {
+								"repo-name": "sentinel-terraform-repo",
+							},
+							"timeouts": null,
+						},
+						"depends_on": [],
+						"id":         "us-east-1",
+						"tainted":    false,
+					},
+				},
+			},
+		},
+		"path":      [],
+		"resources": {},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.4.2"
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources
