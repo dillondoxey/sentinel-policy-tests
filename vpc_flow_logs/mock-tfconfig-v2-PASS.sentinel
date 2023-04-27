@@ -1,0 +1,441 @@
+import "strings"
+
+providers = {
+	"aws": {
+		"alias": "",
+		"config": {
+			"default_tags": [
+				{
+					"tags": {
+						"constant_value": {
+							"environment": "development",
+							"platform":    "terraform",
+							"repo-name":   "sentinel-terraform-repo",
+							"user":        "MatthewDavis",
+						},
+					},
+				},
+			],
+			"region": {
+				"constant_value": "us-east-1",
+			},
+		},
+		"full_name":           "registry.terraform.io/hashicorp/aws",
+		"module_address":      "",
+		"name":                "aws",
+		"provider_config_key": "aws",
+		"version_constraint":  "~> 4.0",
+	},
+}
+
+resources = {
+	"aws_cloudwatch_log_group.example": {
+		"address": "aws_cloudwatch_log_group.example",
+		"config": {
+			"name": {
+				"constant_value": "vpc_logs",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_cloudwatch_log_group",
+	},
+	"aws_flow_log.flow_logs_example1": {
+		"address": "aws_flow_log.flow_logs_example1",
+		"config": {
+			"iam_role_arn": {
+				"references": [
+					"aws_iam_role.example.arn",
+					"aws_iam_role.example",
+				],
+			},
+			"log_destination": {
+				"references": [
+					"aws_cloudwatch_log_group.example.arn",
+					"aws_cloudwatch_log_group.example",
+				],
+			},
+			"traffic_type": {
+				"constant_value": "ALL",
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.main1.id",
+					"aws_vpc.main1",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "flow_logs_example1",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_flow_log",
+	},
+	"aws_flow_log.flow_logs_example3": {
+		"address": "aws_flow_log.flow_logs_example3",
+		"config": {
+			"iam_role_arn": {
+				"references": [
+					"aws_iam_role.example.arn",
+					"aws_iam_role.example",
+				],
+			},
+			"log_destination": {
+				"references": [
+					"aws_cloudwatch_log_group.example.arn",
+					"aws_cloudwatch_log_group.example",
+				],
+			},
+			"traffic_type": {
+				"constant_value": "ALL",
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.main3.id",
+					"aws_vpc.main3",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "flow_logs_example3",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_flow_log",
+	},
+	"aws_flow_log.flow_logs_example5": {
+		"address": "aws_flow_log.flow_logs_example5",
+		"config": {
+			"iam_role_arn": {
+				"references": [
+					"aws_iam_role.example.arn",
+					"aws_iam_role.example",
+				],
+			},
+			"log_destination": {
+				"references": [
+					"aws_cloudwatch_log_group.example.arn",
+					"aws_cloudwatch_log_group.example",
+				],
+			},
+			"traffic_type": {
+				"constant_value": "ALL",
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.main5.id",
+					"aws_vpc.main5",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "flow_logs_example5",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_flow_log",
+	},
+	"aws_iam_role.example": {
+		"address": "aws_iam_role.example",
+		"config": {
+			"assume_role_policy": {
+				"constant_value": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"\",\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"vpc-flow-logs.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+			},
+			"name": {
+				"constant_value": "example",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role",
+	},
+	"aws_iam_role_policy.example": {
+		"address": "aws_iam_role_policy.example",
+		"config": {
+			"name": {
+				"constant_value": "example",
+			},
+			"policy": {
+				"constant_value": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Action\": [\n        \"logs:CreateLogGroup\",\n        \"logs:CreateLogStream\",\n        \"logs:PutLogEvents\",\n        \"logs:DescribeLogGroups\",\n        \"logs:DescribeLogStreams\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": \"*\"\n    }\n  ]\n}\n",
+			},
+			"role": {
+				"references": [
+					"aws_iam_role.example.id",
+					"aws_iam_role.example",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role_policy",
+	},
+	"aws_vpc.main": {
+		"address": "aws_vpc.main",
+		"config": {
+			"cidr_block": {
+				"constant_value": "10.0.0.0/24",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "VPC00",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "main",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"aws_vpc.main1": {
+		"address": "aws_vpc.main1",
+		"config": {
+			"cidr_block": {
+				"constant_value": "11.0.0.0/24",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "VPC01",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "main1",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"aws_vpc.main2": {
+		"address": "aws_vpc.main2",
+		"config": {
+			"cidr_block": {
+				"constant_value": "12.0.0.0/24",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "VPC02",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "main2",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"aws_vpc.main3": {
+		"address": "aws_vpc.main3",
+		"config": {
+			"cidr_block": {
+				"constant_value": "13.0.0.0/24",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "VPC03",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "main3",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"aws_vpc.main4": {
+		"address": "aws_vpc.main4",
+		"config": {
+			"cidr_block": {
+				"constant_value": "14.0.0.0/24",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "VPC04",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "main4",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"aws_vpc.main5": {
+		"address": "aws_vpc.main5",
+		"config": {
+			"cidr_block": {
+				"constant_value": "15.0.0.0/24",
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "VPC05",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "main5",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"data.aws_vpc.vpc1": {
+		"address": "data.aws_vpc.vpc1",
+		"config": {
+			"id": {
+				"references": [
+					"aws_vpc.main1.id",
+					"aws_vpc.main1",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "vpc1",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"data.aws_vpc.vpc3": {
+		"address": "data.aws_vpc.vpc3",
+		"config": {
+			"id": {
+				"references": [
+					"aws_vpc.main3.id",
+					"aws_vpc.main3",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "vpc3",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"data.aws_vpc.vpc5": {
+		"address": "data.aws_vpc.vpc5",
+		"config": {
+			"id": {
+				"references": [
+					"aws_vpc.main5.id",
+					"aws_vpc.main5",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "vpc5",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"data.aws_vpcs.all_vpcs": {
+		"address": "data.aws_vpcs.all_vpcs",
+		"config": {
+			"tags": {
+				"constant_value": {
+					"repo-name": "sentinel-terraform-repo",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "all_vpcs",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpcs",
+	},
+}
+
+provisioners = {}
+
+variables = {}
+
+outputs = {
+	"sentinel_vpc_ids": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "sentinel_vpc_ids",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"data.aws_vpcs.all_vpcs",
+			],
+		},
+	},
+}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}
