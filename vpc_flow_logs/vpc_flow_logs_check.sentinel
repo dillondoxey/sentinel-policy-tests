@@ -1,0 +1,63 @@
+import "tfplan/v2" as tfplan
+
+/* 
+Note that this uses the tfconfig/v2 instead of the tfplan/v2.
+The required attributes (vpc_id) is not mapped correctly in the pre-build. 
+The vpc_id is only populated in the tf state file when the vpc is deployed.
+*/
+
+
+################### Flow Logs Code ############################# 
+
+## Sentinel filter expression that will pull out all of the aws flow log resources
+aws_flow_logs = filter tfplan.resources as _, resources {
+    resources.type is "aws_flow_log" and
+        resources.mode is "managed" 
+}
+
+## this defines the map keys inside of the aws_flow_logs variable 
+aws_fl_keys = keys(aws_flow_logs)
+//print(aws_fl_keys)
+
+## verifying the values inside of the flow_logs block 
+//print(aws_flow_logs[aws_fl_keys[0]].config.vpc_id.references[0])
+
+flow_logs_vpc_id = []
+
+for aws_fl_keys as name {
+    append(flow_logs_vpc_id, aws_flow_logs[name].config.vpc_id.references[0])
+}
+
+  print("VPCs that have flow logs enabled:", flow_logs_vpc_id)
+
+################### VPC ID Code ############################# 
+
+/* 
+This policy is dependent on a data source being configured. 
+This Sentinel filter expression pulls out the vpcs out of the vpc data resource. 
+The vpc_id is not natively in the module code pre-build.
+*/
+aws_vpcs = filter tfplan.resources as _, resources {
+  	resources.mode is "data" and 
+  			resources.type is "aws_vpc" 
+}
+
+### this defines the map keys inside of the vpc data block
+aws_vpc_keys = keys(aws_vpcs)
+
+## verifying the values inside the data block ##
+//print(aws_vpcs[aws_vpc_keys[1]].config.id.references[0])
+
+
+vpc_ids = []
+
+for aws_vpc_keys as name {
+		append(vpc_ids, aws_vpcs[name].config.id.references[0])
+}
+
+print("Total VPC IDs:", vpc_ids)
+
+
+main = rule {
+    vpc_ids==flow_logs_vpc_id
+}
