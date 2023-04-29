@@ -1,6 +1,6 @@
 import "tfplan/v2" as tfplan
 
-
+####!!! NOTE: this uses tfconfig/v2 instead of tfplan/v2 !!!####
 
 #### Gathering CloudTrail resources #### 
 
