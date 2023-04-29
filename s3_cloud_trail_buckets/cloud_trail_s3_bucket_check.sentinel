@@ -39,5 +39,5 @@ for cloud_trail_buckets as buckets {
 // verifying acls
 print("CloudTrail bucket ACLS:", s3_bucket_acls)  
 
-// this rule will fail if a "private acl" is found in the list 
-main = rule { s3_bucket_acls not contains "private" } 
+// this rule will fail if a "public-read" is found in the list 
+main = rule { s3_bucket_acls not contains "public-read" } 
