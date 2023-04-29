@@ -24,7 +24,6 @@ for aws_cloud_trail_keys as name {
 print(cloud_trail_buckets)
 
 ####  Gathering S3 buckets #### 
-// this code will check the the acls of the identified buckets and put them in a list
 aws_s3_buckets = filter tfplan.resources as _, resource_changes {
   resource_changes.type is "aws_s3_bucket"
 }
@@ -32,7 +31,7 @@ aws_s3_buckets = filter tfplan.resources as _, resource_changes {
 //print("Bucket ACLs:", aws_s3_buckets[cloud_trail_buckets[0]].config.acl.constant_value)
 
 s3_bucket_acls = []
-
+// this is looping through the list on line 18, gets the acl of the bucket, and appends it to the s3_bucket_acls list 
 for cloud_trail_buckets as buckets {
   append(s3_bucket_acls, aws_s3_buckets[buckets].config.acl.constant_value)
 }
